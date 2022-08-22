@@ -48,8 +48,8 @@ function App() {
             </ul>
             <div style={{marginLeft: '35px'}}>
                 <button onClick={() => onClickFilterHandler('all')}>all</button>
-                <button onClick={() => onClickFilterHandler('ruble')}>ruble</button>
-                <button onClick={() => onClickFilterHandler('dollar')}>dollar</button>
+                <button onClick={() => onClickFilterHandler('ruble')}>rubles</button>
+                <button onClick={() => onClickFilterHandler('dollar')}>dollars</button>
             </div>
         </>
     );
