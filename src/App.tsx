@@ -14,20 +14,31 @@ function App() {
         {banknote: 'ruble', nominal: 50, number: ' v1234567890'}
     ])
 
-    let currentMoney = money.filter((filteredMoney) => filteredMoney.banknote==='ruble')
+    let currentMoney = money.filter((filteredMoney) => filteredMoney.banknote === 'ruble')
+
+    const onClickFilterHandler = (nameButton: string) => {
+        console.log(nameButton)
+    }
 
     return (
-        <ul>
-            {currentMoney.map((objFromMoneyArr, index) => {
-                return (
-                    <li key={index}>
-                        <span>{objFromMoneyArr.banknote}</span>
-                        <span>{objFromMoneyArr.nominal}</span>
-                        <span>{objFromMoneyArr.number}</span>
-                    </li>
-                )
-            })}
-        </ul>
+        <>
+            <ul>
+                {currentMoney.map((objFromMoneyArr, index) => {
+                    return (
+                        <li key={index}>
+                            <span>{objFromMoneyArr.banknote}</span>
+                            <span>{objFromMoneyArr.nominal}</span>
+                            <span>{objFromMoneyArr.number}</span>
+                        </li>
+                    )
+                })}
+            </ul>
+            <div style={{marginLeft: '35px'}}>
+                <button onClick={() => onClickFilterHandler('all')}>all</button>
+                <button onClick={() => onClickFilterHandler('ruble')}>ruble</button>
+                <button onClick={() => onClickFilterHandler('dollar')}>dollar</button>
+            </div>
+        </>
     );
 }
 
