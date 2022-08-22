@@ -14,11 +14,13 @@ function App() {
         {banknote: 'ruble', nominal: 50, number: ' v1234567890'}
     ])
 
+    let currentMoney = money.filter((filteredMoney) => filteredMoney.banknote==='ruble')
+
     return (
         <ul>
-            {money.map((objFromMoneyArr) => {
+            {currentMoney.map((objFromMoneyArr, index) => {
                 return (
-                    <li>
+                    <li key={index}>
                         <span>{objFromMoneyArr.banknote}</span>
                         <span>{objFromMoneyArr.nominal}</span>
                         <span>{objFromMoneyArr.number}</span>
